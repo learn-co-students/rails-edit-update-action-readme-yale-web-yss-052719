@@ -20,4 +20,17 @@ class ArticlesController < ApplicationController
   end
 
   # add edit and update methods here
+  def edit
+    @article = Article.find(params[:id])
+    #created the Article object stored in @article
+    #edit view template will have access to this object
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    @article.update(title: params[:article][:title], description: params[:article][:description])
+
+    redirect_to article_path(@article)
+    #redirect to the show page to see the updated record
+  end
 end

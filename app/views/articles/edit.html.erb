@@ -1,0 +1,12 @@
+<%= form_for @article do |f| %>
+  <%= f.label 'Article Title' %><br>
+  <%= f.text_field :title %><br>
+
+  <%= f.label 'Article Description' %><br>
+  <%= f.text_area :description %><br>
+
+  <%= f.submit "Submit Article" %>
+  <% end %>
+
+  <%# @article object is from the edit method from articles_controller %>
+  <%# form_for knows to automatically send to the update path %>
